@@ -1,10 +1,10 @@
 # NN-DAS
-This is the official implementation of our Real-time neural-network-based diffuse acoustic simulator. Our model is inspired from [**StackGAN**](https://github.com/hanzhanggit/StackGAN-v2) architecture.
+This is the official implementation of our Real-time neural-network-based diffuse acoustic simulator. Our model is inspired by [**StackGAN**](https://github.com/hanzhanggit/StackGAN-v2) architecture.
 
 ## Requirements
 
 ```
-Python3
+Python3.6
 Pytorch
 python-dateutil
 easydict
@@ -21,7 +21,7 @@ Download the trained model and embedding examples using this command
 source download_generate.sh
 ```
 
-Run the following command inside code_new to generate multi-channel RIRs corresponding to the embeedings. In our example each embedding contains 3 7-channel RIRs.
+Run the following command inside code_new to generate multi-channel RIRs corresponding to the embeddings. In our example, each embedding contains 3 7-channel RIRs.
 
 ```
 python3 main.py --cfg cfg/RIR_eval.yml --gpu 0
@@ -44,8 +44,7 @@ You can find example embedding files in **/generate/embeddings** folder.
 
 ## Range
 
-Our trained NN-DAS is capable of generating RIRs with following range accurately.
-
+Our trained NN-DAS is capable of generating RIRs with the following range accurately.
 ```
 Room Dimension X --> 8m to 11m
 Room Dimesnion Y --> 6m to 7m
@@ -57,7 +56,7 @@ Reverberation time --> 0.2s to 1s
 
 ## Training the Model
 
-Run following command to download the training dataset we created using a [**Diffuse Acoustic Simulator**](https://github.com/GAMMA-UMD/pygsound). You also can train the model using your own dataset.
+Run the following command to download the training dataset we created using a [**Diffuse Acoustic Simulator**](https://github.com/GAMMA-UMD/pygsound). You also can train the model using your dataset.
 
 ```
 source download_data.sh
@@ -76,12 +75,13 @@ python3 main.py --cfg cfg/RIR_s1.yml --gpu 0,1
 
 
 ## Citations
-If you use our NN-DAS for you research, please consider citing
+If you use our **NN-DAS** for your research, please consider citing
+
 ```
 [**Coming Soon**]
 ```
 
-Our work is inspired from
+Our work is inspired by
 ```
 @inproceedings{han2017stackgan,
 Author = {Han Zhang and Tao Xu and Hongsheng Li and Shaoting Zhang and Xiaogang Wang and Xiaolei Huang and Dimitris Metaxas},
@@ -91,7 +91,7 @@ booktitle = {{ICCV}},
 }
 ```
 
-If you use our training dataset generated using [**Diffuse Acoustic Simulator**] in your research, please consider citing
+If you use our training dataset generated using [**Diffuse Acoustic Simulator**](https://github.com/GAMMA-UMD/pygsound) in your research, please consider citing
 ```
 @inproceedings{9052932,
   author={Z. {Tang} and L. {Chen} and B. {Wu} and D. {Yu} and D. {Manocha}},  
