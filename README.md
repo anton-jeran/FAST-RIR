@@ -51,7 +51,7 @@ Room Dimesnion Y --> 6m to 7m
 Room Dimension Z --> 2.5m to 3.5m
 Listener Position --> Any position within the room
 Speaker Position --> Any position within the room
-Reverberation time --> 0.2s to 1s
+Reverberation time --> 0.2s to 0.7s
 ```
 
 ## Training the Model
