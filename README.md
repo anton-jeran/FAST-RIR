@@ -29,15 +29,19 @@ python3 main.py --cfg cfg/RIR_eval.yml --gpu 0
 
 ## Embedding
 
-Each normalized embedding is created as follows:
+Each normalized embedding is created as follows: If you are using our trained model, you may need to use extra parameter Correction(CRR).
 
 ```
 Listener Position = LP
 Source Position = SP
 Room Dimension = RD
 Reverberation Time = T60
+Correction = CRR
 
-Embedding = ([LP_X,LP_Y,LP_Z,SP_X,SP_y,SP_Z,RD_X,RD_Y,RD_Z,T60] /5) + 1
+CRR = 0.1 if 0.5<T60<0.6
+CRR = 0.2 if T60>0.6
+
+Embedding = ([LP_X,LP_Y,LP_Z,SP_X,SP_y,SP_Z,RD_X,RD_Y,RD_Z,(T60+CRR)] /5) + 1
 ```
 
 You can find example embedding files in **/generate/embeddings** folder.
