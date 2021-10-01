@@ -1,5 +1,5 @@
-# NN-DAS
-This is the official implementation of our Real-time neural-network-based diffuse acoustic simulator. Our model is inspired by [**StackGAN**](https://github.com/hanzhanggit/StackGAN-Pytorch) architecture.
+# NN-DAG
+This is the official implementation of our Real-time neural-network-based diffuse acoustic generator. Our model is inspired by [**StackGAN**](https://github.com/hanzhanggit/StackGAN-Pytorch) architecture.
 
 ## Requirements
 
