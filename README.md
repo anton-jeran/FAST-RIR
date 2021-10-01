@@ -40,6 +40,7 @@ Correction = CRR
 
 CRR = 0.1 if 0.5<T60<0.6
 CRR = 0.2 if T60>0.6
+CRR = 0 otherwise
 
 Embedding = ([LP_X,LP_Y,LP_Z,SP_X,SP_y,SP_Z,RD_X,RD_Y,RD_Z,(T60+CRR)] /5) + 1
 ```
