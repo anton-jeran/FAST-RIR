@@ -52,7 +52,7 @@ You can find example embedding files in **/generate/embeddings** folder.
 Our trained NN-DAS is capable of generating RIRs with the following range accurately.
 ```
 Room Dimension X --> 8m to 11m
-Room Dimesnion Y --> 6m to 7m
+Room Dimesnion Y --> 6m to 8m
 Room Dimension Z --> 2.5m to 3.5m
 Listener Position --> Any position within the room
 Speaker Position --> Any position within the room
