@@ -43,9 +43,9 @@ source download_generate.sh
 ```
 
 Create normalized embeddings list in pickle format. You can run following command to generate an example embedding list
-'''
+```
  python3 example1.py
-'''
+```
 
 Run the following command inside code_new to generate RIRs corresponding to the normalized embeddings list.
 
