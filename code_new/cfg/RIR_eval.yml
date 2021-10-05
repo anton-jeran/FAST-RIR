@@ -8,13 +8,13 @@ GPU_ID: '0,1'
 NET_G: '../generate/netG_epoch_242.pth'
 
 DATA_DIR: '../data/Medium_Room'
-EVAL_DIR: '../generate/embeddings/'
+EVAL_DIR: '../example1.pickle'
 WORKERS: 4
 RIRSIZE: 4096
 STAGE: 1
 TRAIN:
     FLAG: False
-    BATCH_SIZE: 128
+    BATCH_SIZE: 64
 
 GAN:
     CONDITION_DIM: 10

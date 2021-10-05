@@ -305,48 +305,51 @@ class GANTrainer(object):
         time_list =[]
 
 
-        # file_path = "/cephfs/anton/pygsound/examples/DAS_Regular_Room/embeddings/"
-        files = os.listdir(file_path)
-        file_size = np.size(files)
+       
 
-        for f in range(file_size):
-            filenames = files[f].split('.')[0] + ".wav"
-            print("file : ",filenames)
-            embedding_path = file_path+files[f]
-            with open(embedding_path, 'rb') as f:
-                embeddings_pickle = pickle.load(f)
+        embedding_path = file_path
+        with open(embedding_path, 'rb') as f:
+            embeddings_pickle = pickle.load(f)
+    
+    
+    
+        embeddings_list =[]
+        num_embeddings = len(embeddings_pickle)
+        for b in range (num_embeddings):
+            embeddings_list.append(embeddings_pickle[b])
+    
+        embeddings = np.array(embeddings_list)
+    
+        save_dir_GAN = "Generated_RIRs"
+        mkdir_p(save_dir_GAN)    
+    
+             
+        
+        normalize_embedding = []
+          
+    
+        batch_size = np.minimum(num_embeddings, self.batch_size)
     
        
-            # with open(file_path, 'rb') as f:
-            #     filenames = pickle.load(f)
-    
-            embeddings_list =[]
-            for b in range (64):
-                embeddings_list.append(embeddings_pickle[b%21])
-    
-            embeddings = np.array(embeddings_list)
-    
-            save_dir_GAN = cfg.NET_G[:cfg.NET_G.find('.pth')]
-            save_dir_GAN = save_dir_GAN + "_stackGAN_ASR"
-            mkdir_p(save_dir_GAN)
-    
-           
-            num_embeddings = 64     
-            
-            normalize_embedding = []
-    
-            batch_size = np.minimum(num_embeddings, self.batch_size)
-    
-           
-            embeddings_batch = embeddings
+        count = 0
+        count_this = 0
+        while count < num_embeddings:
+
+            iend = count + batch_size
+            if iend > num_embeddings:
+                iend = num_embeddings
+                count = num_embeddings - batch_size
+            embeddings_batch = embeddings[count:iend]
+
+
+
             txt_embedding = Variable(torch.FloatTensor(embeddings_batch))
             if cfg.CUDA:
                 txt_embedding = txt_embedding.cuda()
     
             #######################################################
-            # (2) Generate fake images
+             # (2) Generate fake images
             ######################################################
-            # noise.data.normal_(0, 1)
             start_t = time.time()
             inputs = (txt_embedding)
             _, fake_RIRs,c_code = \
@@ -357,40 +360,33 @@ class GANTrainer(object):
     
             RIR_batch_size = batch_size #int(batch_size/2)
             print("batch_size ", RIR_batch_size)
-            channel_size = 21
-            wave_name = filenames
-            save_name_GAN = '%s/%s' % (save_dir_GAN,wave_name)
-            print("wave : ",save_name_GAN)
-            res = {}
-            res_buffer = []
-            rate = 16000
-            res['rate'] = rate
-            for i in range(channel_size):           
-    
+            channel_size = 64
             
+            for i in range(channel_size):
                 fs =16000
+                wave_name = "RIR-"+str(count+i)+".wav"
+                save_name_GAN = '%s/%s' % (save_dir_GAN,wave_name)
+                print("wave : ",save_name_GAN)
+                res = {}
+                res_buffer = []
+                rate = 16000
+                res['rate'] = rate
     
                 wave_GAN = fake_RIRs[i].data.cpu().numpy()
-                wave_GAN = np.array(wave_GAN[0])#[0:math.ceil(fs*RT60_val)])
+                wave_GAN = np.array(wave_GAN[0])
     
-                           
+            
                 res_buffer.append(wave_GAN)
-           
-            res['samples'] = np.zeros((len(res_buffer), np.max([len(ps) for ps in res_buffer])))
-            for i, c in enumerate(res_buffer):
-                res['samples'][i, :len(c)] = c
-           
-            w = WaveWriter(save_name_GAN, channels=np.shape(res['samples'])[0], samplerate=int(res['rate']))
-            w.write(np.array(res['samples'])) 
-    
-    
-          
-        total_time = sum(time_list)
-        total_RIRs = len(time_list)*batch_size
-        total_item = len(time_list)
-        average_time = total_time/total_RIRs
+                res['samples'] = np.zeros((len(res_buffer), np.max([len(ps) for ps in res_buffer])))
+                for i, c in enumerate(res_buffer):
+                    res['samples'][i, :len(c)] = c
 
-        print("total time ", total_time)
-        print("tital RIRs ",total_RIRs)
-        print("average time ",average_time)
-        print("total item ", total_item) 
+                w = WaveWriter(save_name_GAN, channels=np.shape(res['samples'])[0], samplerate=int(res['rate']))
+                w.write(np.array(res['samples'])) 
+
+            print("counter = ",count)
+            count = count+64
+            count_this = count_this+1
+
+
+            
