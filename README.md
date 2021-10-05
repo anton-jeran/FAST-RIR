@@ -1,5 +1,5 @@
-# NN-DAG
-This is the official implementation of our Real-time neural-network-based diffuse acoustic generator. Our model is inspired by [**StackGAN**](https://github.com/hanzhanggit/StackGAN-Pytorch) architecture.
+# FAST-RIR: FAST NEURAL DIFFUSE ROOM IMPULSE RESPONSE GENERATOR
+This is the official implementation of our neural-network-based  fast  diffuse  room  im-pulse  response  generator (**FAST-RIR**)  for  generating  roomimpulse responses (RIRs) for a given acoustic environment. Our model is inspired by [**StackGAN**](https://github.com/hanzhanggit/StackGAN-Pytorch) architecture.
 
 ## Requirements
 
@@ -80,7 +80,7 @@ python3 main.py --cfg cfg/RIR_s1.yml --gpu 0,1
 
 
 ## Citations
-If you use our **NN-DAS** for your research, please consider citing
+If you use our **FAST-RIR** for your research, please consider citing
 
 ```
 [**Coming Soon**]
