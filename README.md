@@ -47,7 +47,7 @@ Create normalized embeddings list in pickle format. You can run following comman
  python3 example1.py
 ```
 
-Run the following command inside code_new to generate RIRs corresponding to the normalized embeddings list.
+Run the following command inside **code_new** to generate RIRs corresponding to the normalized embeddings list. You can find generated RIRs inside **code_new/Generated_RIRs**
 
 ```
 python3 main.py --cfg cfg/RIR_eval.yml --gpu 0
