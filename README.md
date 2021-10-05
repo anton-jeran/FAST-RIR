@@ -11,21 +11,9 @@ easydict
 pandas
 torchfile
 gdown
+pickle
 ```
 
-## Generete RIRs using trained model
-
-Download the trained model and embedding examples using this command
-
-```
-source download_generate.sh
-```
-
-Run the following command inside code_new to generate multi-channel RIRs corresponding to the embeddings. In our example, each embedding contains 3 7-channel RIRs.
-
-```
-python3 main.py --cfg cfg/RIR_eval.yml --gpu 0
-```
 
 ## Embedding
 
@@ -45,7 +33,25 @@ CRR = 0 otherwise
 Embedding = ([LP_X,LP_Y,LP_Z,SP_X,SP_y,SP_Z,RD_X,RD_Y,RD_Z,(T60+CRR)] /5) + 1
 ```
 
-You can find example embedding files in **/generate/embeddings** folder.
+
+## Generete RIRs using trained model
+
+Download the trained model using this command
+
+```
+source download_generate.sh
+```
+
+Create normalized embeddings list in pickle format. You can run following command to generate an example embedding list
+'''
+ python3 example1.py
+'''
+
+Run the following command inside code_new to generate RIRs corresponding to the normalized embeddings list.
+
+```
+python3 main.py --cfg cfg/RIR_eval.yml --gpu 0
+```
 
 ## Range
 
