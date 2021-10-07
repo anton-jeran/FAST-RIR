@@ -1,5 +1,5 @@
 # FAST-RIR: FAST NEURAL DIFFUSE ROOM IMPULSE RESPONSE GENERATOR
-This is the official implementation of our neural-network-based  fast  diffuse  room  im-pulse  response  generator (**FAST-RIR**)  for  generating  roomimpulse responses (RIRs) for a given acoustic environment. Our model is inspired by [**StackGAN**](https://github.com/hanzhanggit/StackGAN-Pytorch) architecture.
+This is the official implementation of our neural-network-based  fast  diffuse  room  impulse  response  generator (**FAST-RIR**)  for  generating  roomimpulse responses (RIRs) for a given acoustic environment. Our model is inspired by [**StackGAN**](https://github.com/hanzhanggit/StackGAN-Pytorch) architecture.
 
 ## Requirements
 
