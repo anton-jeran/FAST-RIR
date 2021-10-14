@@ -89,13 +89,11 @@ python3 main.py --cfg cfg/RIR_s1.yml --gpu 0,1
 If you use our **FAST-RIR** for your research, please consider citing
 
 ```
-@misc{ratnarajah2021fastrir,
-      title={FAST-RIR: Fast neural diffuse room impulse response generator}, 
-      author={Anton Ratnarajah and Shi-Xiong Zhang and Meng Yu and Zhenyu Tang and Dinesh Manocha and Dong Yu},
-      year={2021},
-      eprint={2110.04057},
-      archivePrefix={arXiv},
-      primaryClass={cs.SD}
+@article{ratnarajah2021fast,
+  title={FAST-RIR: Fast neural diffuse room impulse response generator},
+  author={Ratnarajah, Anton and Zhang, Shi-Xiong and Yu, Meng and Tang, Zhenyu and Manocha, Dinesh and Yu, Dong},
+  journal={arXiv preprint arXiv:2110.04057},
+  year={2021}
 }
 ```
 
