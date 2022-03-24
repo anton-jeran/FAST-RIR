@@ -11,6 +11,11 @@ easydict
 pandas
 torchfile
 gdown
+librosa
+soundfile
+acoustics
+wavefile
+wavfile
 pickle
 ```
 
