@@ -16,6 +16,7 @@ soundfile
 acoustics
 wavefile
 wavfile
+pyyaml==5.4.1
 pickle
 ```
 
