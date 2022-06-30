@@ -97,7 +97,15 @@ python3 main.py --cfg cfg/RIR_s1.yml --gpu 0,1
 If you use our **FAST-RIR** for your research, please consider citing
 
 ```
-@INPROCEEDINGS{9747846,  author={Ratnarajah, Anton and Zhang, Shi-Xiong and Yu, Meng and Tang, Zhenyu and Manocha, Dinesh and Yu, Dong},  booktitle={ICASSP 2022 - 2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},   title={Fast-Rir: Fast Neural Diffuse Room Impulse Response Generator},   year={2022},  volume={},  number={},  pages={571-575},  doi={10.1109/ICASSP43922.2022.9747846}}
+@INPROCEEDINGS{9747846, 
+author={Ratnarajah, Anton and Zhang, Shi-Xiong and Yu, Meng and Tang, Zhenyu and Manocha, Dinesh and Yu, Dong}, 
+booktitle={ICASSP 2022 - 2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+title={Fast-Rir: Fast Neural Diffuse Room Impulse Response Generator},
+year={2022}, 
+volume={},
+number={},
+pages={571-575},
+doi={10.1109/ICASSP43922.2022.9747846}}
 ```
 
 Our work is inspired by
