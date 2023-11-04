@@ -383,6 +383,7 @@ class GANTrainer(object):
 
                 w = WaveWriter(save_name_GAN, channels=np.shape(res['samples'])[0], samplerate=int(res['rate']))
                 w.write(np.array(res['samples'])) 
+                w.close()
 
             print("counter = ",count)
             count = count+64
