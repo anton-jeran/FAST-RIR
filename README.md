@@ -5,7 +5,7 @@ This is the official implementation of our neural-network-based  fast  diffuse  
 
 **1) We have generalized our FAST-RIR to generate RIRs for any 3D indoor scenes represented using meshes. Official code of our network [**MESH2IR**](https://anton-jeran.github.io/M2IR/) is available.** 
 
-**2) We release MULTI-CHANNEL MULTI-SPEAKER MULTI-SPATIAL AUDIO CODEC. The official code of our network [**M3-AUDIODEC**](https://github.com/anton-jeran/MULTI-AUDIODEC) is available.** 
+**2) We release Speech2IR estimator. The official code of our network [*Speech2IR**](https://github.com/anton-jeran/Speech2RIR) is available.** 
 
 
 ## Requirements
