@@ -1,3 +1,10 @@
+# **Help:**
+I shared my data and model to my university google drive. After I graduated I lost access to the account and the data I shared. If anyone still have access to the data downlaoded using the scripts
+1. https://github.com/anton-jeran/FAST-RIR/blob/main/download_data.sh
+2. https://github.com/anton-jeran/FAST-RIR/blob/main/download_generate.sh
+
+Please share with me. I will update the Readme and the above script.
+
 # FAST-RIR: FAST NEURAL DIFFUSE ROOM IMPULSE RESPONSE GENERATOR (ICASSP 2022)
 This is the official implementation of our neural-network-based  fast  diffuse  room  impulse  response  generator ([**FAST-RIR**](https://arxiv.org/pdf/2110.04057.pdf))  for  generating  room impulse responses (RIRs) for a given rectangular acoustic environment. Our model is inspired by [**StackGAN**](https://github.com/hanzhanggit/StackGAN-Pytorch) architecture. The audio examples and spectrograms of the generated RIRs are available [here](https://anton-jeran.github.io/FRIR/).
 
